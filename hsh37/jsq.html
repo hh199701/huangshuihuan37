@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>购物简易计算器</title>
+<script type="text/javascript">
+function compute(obj){
+	var n1,n2,result;
+	n1=parseFloat(document.getElementById("n1").value);
+	n2=parseFloat(document.getElementById("n2").value);
+	switch(obj){
+	case"+":result=n1+n2;
+	break;
+	case"-":result=n1-n2;
+	break;
+
+    case"*":result=n1*n2;
+	break;
+
+    case"/":
+	if(n2!=0)
+	result=n1/n2;
+	else
+	result="除数不能为0，请新重输入！";
+	
+	break;
+	}
+	document.getElementById("result").value=result;}
+
+
+</script>
+
+</head>
+
+<body>
+
+
+第一个数：<input  type="text" id="n1" value=""/>
+<br/>
+<br/>
+
+第二个数：<input type="text" id="n2" value="">
+<br/>
+<br/>
+
+<td><input type="button" value="+" onclick="compute('+')" /></td>
+<td><input type="button" value="-" onclick="compute('-')" /></td>
+<td><input type="button" value="*" onclick="compute('*')" /></td>
+<td><input type="button" value="/" onclick="compute('/')" /></td>
+<br/><br />
+
+  计算结果
+  <input type="text" id="result" value="" />
+</body>
+</html>
